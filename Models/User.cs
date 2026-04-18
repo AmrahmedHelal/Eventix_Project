@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+
 ﻿using System.Collections.Generic;
-=======
+
 ﻿using System;
 using System.Collections.Generic;
->>>>>>> upstream/master
 
 namespace Eventix_Project.Models;
 
@@ -17,7 +16,6 @@ public partial class User
 
     public string Password { get; set; } = null!;
 
-<<<<<<< HEAD
     // ===== AUTH FIELDS =====
     public bool IsAccountVerified { get; set; } = false;
 
@@ -28,8 +26,7 @@ public partial class User
     public string? ResetPasswordToken { get; set; }
 
     // ===== NAVIGATION =====
-=======
->>>>>>> upstream/master
+
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual ICollection<Event> Events { get; set; } = new List<Event>();
@@ -41,8 +38,4 @@ public partial class User
     public virtual ICollection<UserCommunity> UserCommunities { get; set; } = new List<UserCommunity>();
 
     public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> upstream/master

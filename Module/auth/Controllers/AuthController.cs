@@ -1,12 +1,14 @@
+using BCrypt.Net;
+using Eventix_Project.Data;
+using Eventix_Project.DTOs.Auth;
+using Eventix_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using BCrypt.Net;
-using Eventix_Project.Models;
-using Eventix_Project.DTOs.Auth;
 
 namespace Eventix_Project.Controllers;
 
@@ -14,10 +16,10 @@ namespace Eventix_Project.Controllers;
 [Route("api/auth")]
 public class AuthController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly EventixContext _context;
     private readonly IConfiguration _config;
 
-    public AuthController(AppDbContext context, IConfiguration config)
+    public AuthController(EventixContext context, IConfiguration config)
     {
         _context = context;
         _config = config;

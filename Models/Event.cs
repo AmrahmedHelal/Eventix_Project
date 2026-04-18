@@ -40,4 +40,5 @@ public partial class Event
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 
     public virtual User? User { get; set; }
+    public decimal Price { get; internal set; }
 }

@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
+using Eventix_Project.Data;
 using Eventix_Project.Models;
-using Eventix_Project.DTOs.Event;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Eventix_Project.Controllers;
 
@@ -10,9 +10,9 @@ namespace Eventix_Project.Controllers;
 [Route("api/event")]
 public class EventController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly EventixContext _context;
 
-    public EventController(AppDbContext context)
+    public EventController(EventixContext context)
     {
         _context = context;
     }
@@ -24,7 +24,7 @@ public class EventController : ControllerBase
         var today = DateTime.Today;
 
         var events = await _context.Events
-            .Where(e => e.StartAt.Date == today)
+            .Where(e => e.StartAt == today)
             .ToListAsync();
 
         return Ok(events);
@@ -54,11 +54,11 @@ public class EventController : ControllerBase
     // ================= CREATE EVENT =================
     [HttpPost("add-event")]
     [Authorize(Roles = "Admin,Organizer")]
-    public async Task<IActionResult> Create([FromForm] CreateEventDto dto, IFormFile? file)
+    public async Task<IActionResult> Create([FromForm] CreateEventDto dto)
     {
         string? imageUrl = null;
 
-        if (file != null)
+        if (dto.File != null)
         {
             // مؤقت لحد ما تضيف Cloudinary
             imageUrl = "uploaded-url";

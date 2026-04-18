@@ -3,11 +3,6 @@ using System.Collections.Generic;
 
 namespace Eventix_Project.Models;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> upstream/master
 public partial class UserRole
 {
     public int Id { get; set; }
@@ -19,8 +14,7 @@ public partial class UserRole
     public virtual Role? Role { get; set; }
 
     public virtual User? User { get; set; }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> upstream/master
+
+
