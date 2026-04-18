@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
 
+>>>>>>> upstream/master
 namespace Eventix_Project.Models;
 
 public partial class RolePermission
