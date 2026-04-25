@@ -7,6 +7,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<EventixContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("connstr")
+    )
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
