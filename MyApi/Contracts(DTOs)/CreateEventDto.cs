@@ -23,8 +23,8 @@ namespace Eventix_Project.Controllers
 
             public string? Image { get; set; }
 
-        public virtual EventCategory? Category { get; set; }
-        public IFormFile? File { get; set; } // 👈 هنا
+            public virtual EventCategory? Category { get; set; }
+            public IFormFile? File { get; set; } // 👈 هنا
 
     }
 }

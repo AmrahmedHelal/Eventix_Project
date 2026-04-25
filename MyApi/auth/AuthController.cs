@@ -10,7 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Eventix_Project.Controllers;
+namespace EventixAPI.auth;
 
 [ApiController]
 [Route("api/auth")]
@@ -47,8 +47,8 @@ public class AuthController : ControllerBase
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
 
-        // assign default role
-        var role = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "User");
+        // assign role
+        var role = await _context.Roles.FirstOrDefaultAsync(r => r.Name == request.RoleName);
 
         if (role != null)
         {

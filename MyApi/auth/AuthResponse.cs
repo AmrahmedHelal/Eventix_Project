@@ -1,4 +1,4 @@
-namespace Eventix_Project.DTOs.Auth
+namespace EventixAPI.auth
 {
     public class AuthResponse
     {

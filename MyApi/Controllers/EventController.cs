@@ -1,10 +1,11 @@
+using Eventix_Project.Controllers;
 using Eventix_Project.Data;
 using Eventix_Project.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Eventix_Project.Controllers;
+namespace EventixAPI.Controllers;
 
 [ApiController]
 [Route("api/event")]
