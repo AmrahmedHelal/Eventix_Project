@@ -17,7 +17,7 @@ public partial class User
     public string Password { get; set; } = null!;
 
     // ===== AUTH FIELDS =====
-    //Not in Db amr
+    
     public bool IsAccountVerified { get; set; } = false;
 
     public string? Otp { get; set; }

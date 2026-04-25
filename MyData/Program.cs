@@ -2,6 +2,6 @@
 
 using(EventixContext c = new EventixContext())
 {
-   foreach(var item in c.Users )
+   foreach(var item in c.EventCategories )
         Console.WriteLine(  );
 }
